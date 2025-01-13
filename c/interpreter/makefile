@@ -1,5 +1,7 @@
 CC=ccache gcc
 CFLAGS=-Wall -Werror -g
+EXE=hello xc
+OBJ=*.o
 
 .PHONY: check
 check:
@@ -12,4 +14,4 @@ test:
 
 .PHONY: clean
 clean:
-	rm -rf xc hello
+	rm -rf $(EXE) $(OBJ)
