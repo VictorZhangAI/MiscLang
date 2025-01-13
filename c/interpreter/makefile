@@ -1,5 +1,5 @@
 CC=ccache gcc
-CFLAGS=-Wall -Werror -g
+CFLAGS=-w -g
 EXE=hello xc
 OBJ=*.o
 
