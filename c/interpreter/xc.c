@@ -1,9 +1,111 @@
 #include"vm/headers.h"
 #include"vm/machine.h"
 
+enum
+{
+	Num = 128,
+	Fun,
+	Sys,
+	Glo,
+	Loc,
+	Id,
+	Char,
+	Else,
+	Enum,
+	If,
+	Int,
+	Return,
+	Sizeof,
+	While,
+	Assign,
+	Cond,
+	Lor,
+	Lan,
+	Or,
+	Xor,
+	And,
+	Eq,
+	Ne,
+	Lt,
+	Gt,
+	Le,
+	Ge,
+	Shl,
+	Shr,
+	Add,
+	Sub,
+	Mul,
+	Div,
+	Mod,
+	Inc,
+	Dec,
+	Brak
+};
+
+int token_val;
+int *current_id, *symbols;
+
+enum
+{
+	Token,
+	Hash,
+	Name,
+	Type,
+	Class,
+	Value,
+	BType,
+	BClass,
+	BValue,
+	IdSize
+};
+
 void next()
 {
-	token = *src++;
+	char *last_pos;
+	int hash;
+
+	while(token = *src)
+	{
+		++src;
+		if(token == '\n') ++line;
+		else if(token == '#')
+		{
+			while(*src != 0 && *src != '\n')
+			{
+				src++;
+			}
+		}
+		else if((token >= 'a' && token <= 'z')
+		     || (token >= 'A' && token <= 'Z')
+		     || (token == '_'))
+		{
+			last_pos = src - 1;
+			hash = token;
+			while((*src >= 'a' && *src <= 'z')
+			   || (*src >= 'A' && *src <= 'Z')
+			   || (*src >= '0' && *src <= '9')
+			   || (*src == '_'))
+			{
+				hash = hash * 147 + *src;
+				src++;
+			}
+			current_id = symbols;
+			while(current_id[Token])
+			{
+				if(current_id[Hash] == hash
+				&& !memcmp((char *)current_id[Name], last_pos, src - last_pos))
+				{
+					token = current_id[Token];
+					return;
+				}
+				current_id = current_id + IdSize;
+			}
+			current_id[Name] = (int)last_pos;
+			current_id[Hash] = hash;
+			token = current_id[Token] = Id;
+		}
+	}
+
 	return;
 }
 
