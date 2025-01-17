@@ -9,4 +9,5 @@ This repo contains some small projects
 <li>A small C interpreter(DOING)</li>
 <li>some Scala Examples (DONE)</li>
 <li>Perl one-liner (TODO)</li>
+<li>The Rust Programming Language(Archived)</li>
 </ul>
