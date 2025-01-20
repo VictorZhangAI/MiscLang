@@ -1,0 +1,74 @@
+HTTP状态 500 - java.lang.ClassNotFoundException: org.apache.jsp.jsp.commons.main.main_jsp
+type 异常报告
+
+消息 java.lang.ClassNotFoundException: org.apache.jsp.jsp.commons.main.main_jsp
+
+描述 The server encountered an internal error that prevented it from fulfilling this request.
+
+例外情况
+
+org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.jsp.commons.main.main_jsp
+	org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:177)
+	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:238)
+	org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:264)
+	org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1216)
+	org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1001)
+	org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:945)
+	org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:867)
+	org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:951)
+	org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:842)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:827)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	com.incon.framework.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:83)
+	org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:106)
+	org.jasig.cas.client.util.AssertionThreadLocalFilter.doFilter(AssertionThreadLocalFilter.java:54)
+	org.jasig.cas.client.util.HttpServletRequestWrapperFilter.doFilter(HttpServletRequestWrapperFilter.java:75)
+	org.jasig.cas.client.validation.AbstractTicketValidationFilter.doFilter(AbstractTicketValidationFilter.java:201)
+	org.jasig.cas.client.session.SingleSignOutFilter.doFilter(SingleSignOutFilter.java:76)
+	org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:106)
+根本原因。
+
+java.lang.ClassNotFoundException: org.apache.jsp.jsp.commons.main.main_jsp
+	java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	java.security.AccessController.doPrivileged(Native Method)
+	java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:132)
+	org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:63)
+	org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:172)
+	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:238)
+	org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:264)
+	org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1216)
+	org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1001)
+	org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:945)
+	org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:867)
+	org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:951)
+	org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:842)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:827)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	com.incon.framework.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:83)
+	org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:106)
+	org.jasig.cas.client.util.AssertionThreadLocalFilter.doFilter(AssertionThreadLocalFilter.java:54)
+	org.jasig.cas.client.util.HttpServletRequestWrapperFilter.doFilter(HttpServletRequestWrapperFilter.java:75)
+	org.jasig.cas.client.validation.AbstractTicketValidationFilter.doFilter(AbstractTicketValidationFilter.java:201)
+	org.jasig.cas.client.session.SingleSignOutFilter.doFilter(SingleSignOutFilter.java:76)
+	org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:106)
+):注意 主要问题的全部 stack 信息可以在 server logs 里查看
+
+Apache Tomcat/7.0.79
