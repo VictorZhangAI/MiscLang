@@ -18,6 +18,8 @@ Abort: gave up, remaining unfinished
 <li>The Rust Programming Language(Archived)</li>
 <li>A Quine Program in C(Archived)</li>
 <li>A disk-filler in C(Archived)</li>
+<li>Some Examples in SpinalHDL(DOING)</li>
+<li>Some Problems in LeetCode(DOING)</li>
 <li>A Virtual Machine in C(TODO)</li>
 <li>A netstack in C(TODO)</li>
 </ul>
