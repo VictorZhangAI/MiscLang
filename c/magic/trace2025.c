@@ -44,12 +44,14 @@ void take()
 }
 
 #define TRY(X, Y, Z) \
+	do{ \
 	fill((X), (Y), (Z)); \
 	swap_left(0); \
 	swap_right(1); \
 	swap_left(2); \
 	take(); \
-	printf("%d\n", hand[1]);
+	printf("%d\n", hand[1]);\
+	}while(0)
 
 int main()
 {
