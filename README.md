@@ -19,6 +19,8 @@ Abort: gave up, remaining unfinished
 <li>A Quine Program in C(Archived)</li>
 <li>A disk-filler in C(Archived)</li>
 <li>Some Examples in SpinalHDL(DONE)</li>
+<li>A memory allocator in C(Archived)</li>
+<li>A Linux Container in C(TODO)</li>
 <li>Some Problems in LeetCode(DOING)</li>
 <li>A Virtual Machine in C(TODO)</li>
 <li>A netstack in C(TODO)</li>
