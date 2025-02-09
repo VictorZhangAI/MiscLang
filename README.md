@@ -3,7 +3,7 @@ Playing with some programming languages
 This repo contains some small projects  
 
 TODO: unstarted  
-DOING: started not finished
+DOING: started not finished  
 DONE: just finished  
 Archived: won't modify in near future  
 Abort: gave up, remaining unfinished  
