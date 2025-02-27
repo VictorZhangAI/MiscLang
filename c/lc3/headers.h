@@ -23,6 +23,8 @@
 
 #endif
 
+#define MEMORY_MAX (1 << 16)
+
 enum
 {
 	R_R0 = 0,
@@ -57,6 +59,8 @@ enum
 	OP_LEA,
 	OP_TRAP
 };
+
+#define PC_START 0x3000
 
 enum
 {
