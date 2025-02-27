@@ -116,7 +116,7 @@ uint16_t mem_read(uint16_t address)
 			memory[MR_KBSR] = 0;
 		}
 	}
-	return meomry[address];
+	return memory[address];
 }
 
 int main(int argc, char **argv)

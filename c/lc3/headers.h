@@ -82,7 +82,7 @@ enum
 enum
 {
 	MR_KBSR = 0xFE00,
-	MR_KBDR = 0xFEE02
+	MR_KBDR = 0xFE02
 };
 
 #endif
