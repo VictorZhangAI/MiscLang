@@ -31,6 +31,13 @@ uint16_t check_key()
 	return select(1, &readfds, NULL, NULL, &timeout) != 0;
 }
 
+void handle_interrupt(int signal)
+{
+	restore_input_buffering();
+	printf("\n");
+	exit(-2);
+}
+
 uint16_t sign_extend(uint16_t x, int bit_count)
 {
 	if((x >> (bit_count - 1)) & 1)
@@ -128,7 +135,9 @@ int main(int argc, char **argv)
 			exit(1);
 		}
 	}
-	//setup
+	
+	signal(SIGINT, handle_interrupt);
+	disable_input_buffering();
 	
 	reg[R_COND] = PC_START;
 
@@ -347,6 +356,6 @@ int main(int argc, char **argv)
 			
 		}
 	}
-	//shutdown
+	restore_input_buffering();
 	return 0;
 }
