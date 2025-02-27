@@ -13,6 +13,11 @@ uint16_t sign_extend(uint16_t x, int bit_count)
 	return x;
 }
 
+uint16_t swap16(uint16_t x)
+{
+	return (x << 8) | (x >> 8);
+}
+
 void update_flags(uint16_t r)
 {
 	if(reg[r] == 0)
@@ -27,6 +32,35 @@ void update_flags(uint16_t r)
 	{
 		reg[R_COND] = FL_POS;
 	}
+}
+
+void read_image_file(FILE *file)
+{
+	uint16_t origin;
+	fread(&origin, sizeof(origin), 1, file);
+	origin = swap16(origin);
+
+	uint16_t max_read = MEMORY_MAX - origin;
+	uint16_t *p = memory + origin;
+	size_t read = fread(p, sizeof(uint16_t), max_read, file);
+
+	while(read-- > 0)
+	{
+		*p = swap16(*p);
+		++p;
+	}
+}
+
+int read_image(const char* image_path)
+{
+	FILE* file = fopen(image_path, "rb");
+	if(!file)
+	{
+		return 0;
+	}
+	read_image_file(file);
+	fclose(file);
+	return 1;
 }
 
 int main(int argc, char **argv)
