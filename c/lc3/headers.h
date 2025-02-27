@@ -79,4 +79,10 @@ enum
 	TRAP_HALT = 0x25,
 };
 
+enum
+{
+	MR_KBSR = 0xFE00,
+	MR_KBDR = 0xFEE02
+};
+
 #endif
