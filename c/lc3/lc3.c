@@ -191,7 +191,24 @@ int main(int argc, char **argv)
 				}
 				break;
 			case OP_TRAP:
-				//TRAP
+				{
+					reg[R_R7] = reg[R_PC];
+					switch(instr & 0xFF)
+					{
+						case TRAP_GETC:
+							break;
+						case TRAP_OUT:
+							break;
+						case TRAP_PUTS:
+							break;
+						case TRAP_IN:
+							break;
+						case TRAP_PUTSP:
+							break;
+						case TRAP_HALT:
+							break;
+					}
+				}
 				break;
 			case OP_RES:
 			case OP_RTI:
