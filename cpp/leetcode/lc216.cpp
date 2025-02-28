@@ -1,28 +1,29 @@
 class Solution {
 public:
-    void findCombination(int ind, int target, vector<int>& arr, vector<vector<int>>& ans, vector<int>& ds)
+    vector<vector<int>> ans;
+    int k;
+    void getCombi(vector<int> vals, int tar, int start)
     {
-        if(target == 0)
+        if(tar < 0) return;
+        if(vals.size() == k)
         {
-            ans.push_back(ds);
+            if(tar == 0) ans.push_back(vals);
             return;
         }
-        for(int i = ind; i < arr.size(); i++)
+
+        for(int i = start; i <= 9; i++)
         {
-            if(i > ind && arr[i] == arr[i - 1])
-                continue;
-            if(arr[i] > target)
-                break;
-            ds.push_back(arr[i]);
-            findCombination(i + 1, target - arr[i], arr, ans, ds);
-            ds.pop_back();
+            if(tar - i >= 0)
+            {
+                vals.push_back(i);
+                getCombi(vals, tar - i, i + 1);
+                vals.pop_back();
+            } 
         }
     }
-    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
-        sort(candidates.begin(), candidates.end());
-        vector<vector<int>> ans;
-        vector<int> ds;
-        findCombination(0, target, candidates, ans, ds);
+    vector<vector<int>> combinationSum3(int k, int n) {
+        this->k = k;
+        getCombi({}, n, 1);
         return ans;
     }
 };
